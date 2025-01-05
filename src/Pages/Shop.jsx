@@ -1,5 +1,6 @@
 // import React from "react";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Shop = () => {
   // Products fetched from API
@@ -821,86 +822,18 @@ const Shop = () => {
             {/* Start Best Seller */}
             <section className="lattest-product-area pb-40 category-list">
               <div className="row">
-                {/* single product */}
-                {/* <div className="col-lg-4 col-md-6">
-                  <div className="single-product">
-                    <img
-                      className="img-fluid"
-                      src="img/product/p1.jpg"
-                      alt=""
-                    />
-                    <div className="product-details">
-                      <h6>addidas New Hammer sole for Sports person</h6>
-                      <div className="price">
-                        <h6>$150.00</h6>
-                        <h6 className="l-through">$210.00</h6>
-                      </div>
-                      <div className="prd-bottom">
-                        <a href="" className="social-info">
-                          <span className="ti-bag" />
-                          <p className="hover-text">add to bag</p>
-                        </a>
-                        <a href="" className="social-info">
-                          <span className="lnr lnr-heart" />
-                          <p className="hover-text">Wishlist</p>
-                        </a>
-                        <a href="" className="social-info">
-                          <span className="lnr lnr-sync" />
-                          <p className="hover-text">compare</p>
-                        </a>
-                        <a href="" className="social-info">
-                          <span className="lnr lnr-move" />
-                          <p className="hover-text">view more</p>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
-                {/* single product */}
-                {/* <div className="col-lg-4 col-md-6">
-                  <div className="single-product">
-                    <img
-                      className="img-fluid"
-                      src="img/product/p2.jpg"
-                      alt=""
-                    />
-                    <div className="product-details">
-                      <h6>addidas New Hammer sole for Sports person</h6>
-                      <div className="price">
-                        <h6>$150.00</h6>
-                        <h6 className="l-through">$210.00</h6>
-                      </div>
-                      <div className="prd-bottom">
-                        <a href="" className="social-info">
-                          <span className="ti-bag" />
-                          <p className="hover-text">add to bag</p>
-                        </a>
-                        <a href="" className="social-info">
-                          <span className="lnr lnr-heart" />
-                          <p className="hover-text">Wishlist</p>
-                        </a>
-                        <a href="" className="social-info">
-                          <span className="lnr lnr-sync" />
-                          <p className="hover-text">compare</p>
-                        </a>
-                        <a href="" className="social-info">
-                          <span className="lnr lnr-move" />
-                          <p className="hover-text">view more</p>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
-                {/* single product */}
                 {filteredShop.map((product) => (
-                  <div className="col-lg-4 col-md-6">
+                  <div className="col-lg-4 col-md-6" key={product.id}>
                     <div className="single-product">
-                      <img
-                        className="img-fluid"
-                        style={{ height: "300px" }}
-                        src={product.image}
-                        alt=""
-                      />
+                      {/* Wrap the product image with Link */}
+                      <Link to={`/product/${product.id}`}>
+                        <img
+                          className="img-fluid"
+                          style={{ height: "300px" }}
+                          src={product.image}
+                          alt=""
+                        />
+                      </Link>
                       <div className="product-details">
                         <h6>{product.title}</h6>
                         <div className="price">
@@ -920,154 +853,19 @@ const Shop = () => {
                             <span className="lnr lnr-sync" />
                             <p className="hover-text">compare</p>
                           </a>
-                          <a href="" className="social-info">
+                          {/* Wrap the "view more" link with Link */}
+                          <Link
+                            to={`/product/${product.id}`}
+                            className="social-info"
+                          >
                             <span className="lnr lnr-move" />
                             <p className="hover-text">view more</p>
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
                   </div>
                 ))}
-                {/* <div className="col-lg-4 col-md-6">
-                  <div className="single-product">
-                    <img
-                      className="img-fluid"
-                      src="img/product/p3.jpg"
-                      alt=""
-                    />
-                    <div className="product-details">
-                      <h6>addidas New Hammer sole for Sports person</h6>
-                      <div className="price">
-                        <h6>$150.00</h6>
-                        <h6 className="l-through">$210.00</h6>
-                      </div>
-                      <div className="prd-bottom">
-                        <a href="" className="social-info">
-                          <span className="ti-bag" />
-                          <p className="hover-text">add to bag</p>
-                        </a>
-                        <a href="" className="social-info">
-                          <span className="lnr lnr-heart" />
-                          <p className="hover-text">Wishlist</p>
-                        </a>
-                        <a href="" className="social-info">
-                          <span className="lnr lnr-sync" />
-                          <p className="hover-text">compare</p>
-                        </a>
-                        <a href="" className="social-info">
-                          <span className="lnr lnr-move" />
-                          <p className="hover-text">view more</p>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
-                {/* single product */}
-                {/* <div className="col-lg-4 col-md-6">
-                  <div className="single-product">
-                    <img
-                      className="img-fluid"
-                      src="img/product/p4.jpg"
-                      alt=""
-                    />
-                    <div className="product-details">
-                      <h6>addidas New Hammer sole for Sports person</h6>
-                      <div className="price">
-                        <h6>$150.00</h6>
-                        <h6 className="l-through">$210.00</h6>
-                      </div>
-                      <div className="prd-bottom">
-                        <a href="" className="social-info">
-                          <span className="ti-bag" />
-                          <p className="hover-text">add to bag</p>
-                        </a>
-                        <a href="" className="social-info">
-                          <span className="lnr lnr-heart" />
-                          <p className="hover-text">Wishlist</p>
-                        </a>
-                        <a href="" className="social-info">
-                          <span className="lnr lnr-sync" />
-                          <p className="hover-text">compare</p>
-                        </a>
-                        <a href="" className="social-info">
-                          <span className="lnr lnr-move" />
-                          <p className="hover-text">view more</p>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
-                {/* single product */}
-                {/* <div className="col-lg-4 col-md-6">
-                  <div className="single-product">
-                    <img
-                      className="img-fluid"
-                      src="img/product/p5.jpg"
-                      alt=""
-                    />
-                    <div className="product-details">
-                      <h6>addidas New Hammer sole for Sports person</h6>
-                      <div className="price">
-                        <h6>$150.00</h6>
-                        <h6 className="l-through">$210.00</h6>
-                      </div>
-                      <div className="prd-bottom">
-                        <a href="" className="social-info">
-                          <span className="ti-bag" />
-                          <p className="hover-text">add to bag</p>
-                        </a>
-                        <a href="" className="social-info">
-                          <span className="lnr lnr-heart" />
-                          <p className="hover-text">Wishlist</p>
-                        </a>
-                        <a href="" className="social-info">
-                          <span className="lnr lnr-sync" />
-                          <p className="hover-text">compare</p>
-                        </a>
-                        <a href="" className="social-info">
-                          <span className="lnr lnr-move" />
-                          <p className="hover-text">view more</p>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
-                {/* single product */}
-                {/* <div className="col-lg-4 col-md-6">
-                  <div className="single-product">
-                    <img
-                      className="img-fluid"
-                      src="img/product/p6.jpg"
-                      alt=""
-                    />
-                    <div className="product-details">
-                      <h6>addidas New Hammer sole for Sports person</h6>
-                      <div className="price">
-                        <h6>$150.00</h6>
-                        <h6 className="l-through">$210.00</h6>
-                      </div>
-                      <div className="prd-bottom">
-                        <a href="" className="social-info">
-                          <span className="ti-bag" />
-                          <p className="hover-text">add to bag</p>
-                        </a>
-                        <a href="" className="social-info">
-                          <span className="lnr lnr-heart" />
-                          <p className="hover-text">Wishlist</p>
-                        </a>
-                        <a href="" className="social-info">
-                          <span className="lnr lnr-sync" />
-                          <p className="hover-text">compare</p>
-                        </a>
-                        <a href="" className="social-info">
-                          <span className="lnr lnr-move" />
-                          <p className="hover-text">view more</p>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
               </div>
             </section>
             End Best Seller

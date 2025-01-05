@@ -187,7 +187,11 @@ const ProductDettail = () => {
             <div className="col-lg-6">
               <div className="s_Product_carousel">
                 <div className="single-prd-item">
-                  <img className="img-fluid" src={product.image} alt="" />
+                  <img
+                    className="img-fluid"
+                    src="img/category/s-p1.jpg"
+                    alt=""
+                  />
                 </div>
                 <div className="single-prd-item">
                   <img
@@ -207,8 +211,8 @@ const ProductDettail = () => {
             </div>
             <div className="col-lg-5 offset-lg-1">
               <div className="s_product_text">
-                <h3>{product.title}</h3>
-                <h2>{product.price} $</h2>
+                <h3>Faded SkyBlu Denim Jeans</h3>
+                <h2>$149.99</h2>
                 <ul className="list">
                   <li>
                     <a className="active" href="#">
